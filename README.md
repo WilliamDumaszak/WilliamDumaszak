@@ -2,7 +2,7 @@
 
 # William Dumaszak
 
-### ML/AI Engineer · LLM Systems · RAG · MLOps
+### AI Engineer
 
 <p>
   <a href="https://github.com/WilliamDumaszak">
@@ -75,11 +75,3 @@ Airflow ingestion → Elasticsearch index → /query API → LLM → PostgreSQL 
 | **Infrastructure** | Docker, Kubernetes, Terraform, GitHub Actions |
 | **Observability** | Prometheus, Grafana, Airflow |
 | **Cloud** | Azure (AI Search, Container Apps, ML, AKS) |
-
----
-
-<div align="center">
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=WilliamDumaszak&show_icons=true&theme=dark&hide_border=true&count_private=true)
-
-</div>
