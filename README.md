@@ -4,12 +4,6 @@
 
 ### Senior AI Engineer · LLM Systems · RAG · Fine-tuning · MLOps
 
-<p>
-  <a href="https://www.linkedin.com/in/william-dumaszak-17072000/">
-    <img src="https://img.shields.io/badge/LinkedIn-william--dumaszak-0A66C2?style=flat-square&logo=linkedin" />
-  </a>
-</p>
-
 </div>
 
 ---
