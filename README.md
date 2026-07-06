@@ -8,7 +8,7 @@
 
 ---
 
-AI Engineer and Machine Learning Engineer focused on designing and delivering end-to-end LLM systems for enterprise environments — from architecture decisions and fine-tuning strategy to production serving, evaluation pipelines, and observability.
+AI Engineer focused on designing and delivering end-to-end LLM systems for enterprise environments — from architecture decisions and fine-tuning strategy to production serving, evaluation pipelines, and observability.
 
 I work across the full LLM stack: retrieval-augmented generation with adaptive routing and hybrid search, LoRA fine-tuning with rigorous baseline comparison, and production-grade serving infrastructure with real-time monitoring. My work is driven by the question of what actually makes LLM systems reliable and maintainable in production, not just on paper.
 
