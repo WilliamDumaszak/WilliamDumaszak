@@ -71,23 +71,3 @@ User query → /query → BM25 retrieval → LLM → PostgreSQL audit → Promet
 `Python` `Elasticsearch` `Ollama` `vLLM` `PostgreSQL` `Prometheus` `Grafana` `Airflow` `Kubernetes` `Docker`
 
 ---
-
-## Tech Stack
-
-| Area | Tools |
-|---|---|
-| **LLM / Fine-tuning** | HuggingFace Transformers, TRL, LoRA/QLoRA, MLflow |
-| **Agentic / RAG** | LangGraph, LangChain, RAGAS, cross-encoder reranking |
-| **Serving** | FastAPI, Ollama, vLLM, Azure OpenAI |
-| **Retrieval** | Elasticsearch, Azure AI Search, ChromaDB |
-| **Infrastructure** | Docker, Kubernetes, Terraform, GitHub Actions |
-| **Observability** | Prometheus, Grafana, Airflow |
-| **Cloud** | Azure (AI Search, Document Intelligence, Container Apps, ML, AKS) |
-
----
-
-## Currently
-
-- Building and evaluating agentic LLM systems for enterprise use cases at Avanade
-- Exploring evaluation frameworks beyond RAGAS: LLM-as-judge patterns and automated red-teaming
-- Interested in conversations about production RAG, fine-tuning strategy, and LLM reliability
