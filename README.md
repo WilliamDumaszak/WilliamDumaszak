@@ -23,14 +23,12 @@ I work across the full data and AI stack: classical machine learning and mlops s
 This project addresses what happens after a machine learning model has been trained: how do you make its delivery reproducible and prevent low-quality models from reaching production? The pipeline uses feature engineering, preprocessing, Optuna hyperparameter tuning, and XGBoost training, with every experiment tracked in MLflow. Models are registered in the MLflow Registry only when they meet explicit R² and RMSE thresholds.
 
 ```
-A FastAPI serving layer loads the current Production model and exposes prediction, health, model metadata, and drift detection endpoints. Evidently compares incoming data against the training reference dataset, generating a structured drift summary and an HTML report. Docker Compose provides the local MLflow and PostgreSQL environment, while GitHub Actions builds the image and deploys it to Kubernetes with replicas, resource limits, and health probes.
+FastAPI → Model endpoints → Evidently → Report → Docker → GitHub Actions Build
 ```
 
 **Design decisions:** MLflow over ad hoc model files for experiment lineage and controlled model promotion. Explicit R²/RMSE thresholds over manual approval to enforce quality in the training pipeline. Evidently over custom statistical code to provide both machine-readable drift summaries and human-readable reports. Kubernetes over a single container for replicated serving, health checks, and resource control.
 
-```
-Python FastAPI XGBoost scikit-learn Optuna MLflow PostgreSQL Evidently DVC Kubernetes Docker GitHub Actions
-```
+`Python` `FastAPI` `XGBoost` `scikit-learn` `Optuna` `MLflow` `PostgreSQL` `Evidently` `DVC` `Kubernetes` `Docker` `GitHub Actions`
 
 ---
 
