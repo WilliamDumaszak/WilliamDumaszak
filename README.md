@@ -2,19 +2,37 @@
 
 # William Dumaszak
 
-### Senior AI Engineer · LLM Systems · RAG · Fine-tuning · MLOps
+### Senior AI/ML Engineer · LLM Systems · RAG · AI Agents · MLOps
 
 </div>
 
 ---
 
-AI Engineer focused on designing and delivering end-to-end LLM systems for enterprise environments — from architecture decisions and fine-tuning strategy to production serving, evaluation pipelines, and observability.
+AI/ML Engineer focused on designing and delivering end-to-end inteligent systems for enterprise environments — from architecture decisions and fine-tuning strategy to production serving, evaluation pipelines, and observability.
 
-I work across the full LLM stack: retrieval-augmented generation with adaptive routing and hybrid search, LoRA fine-tuning with rigorous baseline comparison, and production-grade serving infrastructure with real-time monitoring. My work is driven by the question of what actually makes LLM systems reliable and maintainable in production, not just on paper.
+I work across the full data and AI stack: classical machine learning and mlops systems, retrieval-augmented generation with adaptive routing and hybrid search and production-grade serving infrastructure with real-time monitoring. My work is driven by the question of what actually makes AI systems reliable and maintainable in production, not just on paper.
 
 ---
 
 ## Featured Projects
+
+### 🏠 [Production MLOps Pipeline](https://github.com/WilliamDumaszak/mlops-production-pipeline)
+
+> End-to-end MLOps pipeline for housing price prediction with experiment tracking, quality-gated model registration, drift detection, and Kubernetes deployment.
+
+This project addresses what happens after a machine learning model has been trained: how do you make its delivery reproducible and prevent low-quality models from reaching production? The pipeline uses feature engineering, preprocessing, Optuna hyperparameter tuning, and XGBoost training, with every experiment tracked in MLflow. Models are registered in the MLflow Registry only when they meet explicit R² and RMSE thresholds.
+
+```
+A FastAPI serving layer loads the current Production model and exposes prediction, health, model metadata, and drift detection endpoints. Evidently compares incoming data against the training reference dataset, generating a structured drift summary and an HTML report. Docker Compose provides the local MLflow and PostgreSQL environment, while GitHub Actions builds the image and deploys it to Kubernetes with replicas, resource limits, and health probes.
+```
+
+**Design decisions:** MLflow over ad hoc model files for experiment lineage and controlled model promotion. Explicit R²/RMSE thresholds over manual approval to enforce quality in the training pipeline. Evidently over custom statistical code to provide both machine-readable drift summaries and human-readable reports. Kubernetes over a single container for replicated serving, health checks, and resource control.
+
+```
+Python FastAPI XGBoost scikit-learn Optuna MLflow PostgreSQL Evidently DVC Kubernetes Docker GitHub Actions
+```
+
+---
 
 ### 🔍 [Agentic RAG Platform](https://github.com/WilliamDumaszak/agentic-rag-platform)
 
@@ -35,24 +53,6 @@ Query → decision node → [Chroma | Azure AI Search | web search | direct]
 
 ---
 
-### 💹 [LLM Fine-tuning for Finance](https://github.com/WilliamDumaszak/llm-finetuning-finance)
-
-> End-to-end LoRA fine-tuning pipeline for financial sentiment — from dataset prep to Azure production.
-
-Fine-tuned a 1B parameter LLM on financial news for 3-class sentiment classification (`negative`, `neutral`, `positive`) using instruction-style formatting and TRL. Evaluation is structured as a proper A/B: base model vs. tuned model on the same held-out set, tracked via MLflow.
-
-The project covers the full lifecycle: data curation with quality filters, LoRA training with configurable rank/alpha, checkpoint evaluation, adapter merge for clean export, FastAPI serving with per-class confidence scores, and Azure deployment via Terraform + GitHub Actions CI/CD.
-
-```
-financial_phrasebank → data prep → LoRA (TRL) → eval vs. base → merge → FastAPI → Azure
-```
-
-**Design decisions:** LoRA over full fine-tuning for parameter efficiency and reproducibility. Instruction-tuning format to keep the model general while specializing on the task.
-
-`Python` `LoRA` `TRL` `HuggingFace` `FastAPI` `MLflow` `Docker` `Terraform` `Azure` `GitHub Actions`
-
----
-
 ### 📡 [LLM Serving & Monitoring](https://github.com/WilliamDumaszak/llm-serving-monitoring)
 
 > Production LLM serving stack with RAG, full observability, audit logging, and scheduled ingestion.
@@ -69,5 +69,3 @@ User query → /query → BM25 retrieval → LLM → PostgreSQL audit → Promet
 **Design decisions:** Prometheus over managed observability for cost control and custom metric flexibility. PostgreSQL for interaction storage over NoSQL to enable structured querying for evaluation.
 
 `Python` `Elasticsearch` `Ollama` `vLLM` `PostgreSQL` `Prometheus` `Grafana` `Airflow` `Kubernetes` `Docker`
-
----
