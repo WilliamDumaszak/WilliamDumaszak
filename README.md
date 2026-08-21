@@ -2,35 +2,19 @@
 
 # William Dumaszak
 
-### Senior AI/ML Engineer · LLM Systems · RAG · AI Agents · MLOps
+### Senior AI Engineer · LLM Systems · RAG · AI Agents · MLOps
 
 </div>
 
 ---
 
-AI/ML Engineer focused on designing and delivering end-to-end inteligent systems for enterprise environments — from architecture decisions and fine-tuning strategy to production serving, evaluation pipelines, and observability.
+AI Engineer focused on designing and delivering end-to-end inteligent systems for enterprise environments — from architecture decisions and fine-tuning strategy to production serving, evaluation pipelines, and observability.
 
 I work across the full data and AI stack: classical machine learning and mlops systems, retrieval-augmented generation with adaptive routing and hybrid search and production-grade serving infrastructure with real-time monitoring. My work is driven by the question of what actually makes AI systems reliable and maintainable in production, not just on paper.
 
 ---
 
 ## Featured Projects
-
-### 🏠 [Production MLOps Pipeline](https://github.com/WilliamDumaszak/mlops-production-pipeline)
-
-> End-to-end MLOps pipeline for housing price prediction with experiment tracking, quality-gated model registration, drift detection, and Kubernetes deployment.
-
-This project addresses what happens after a machine learning model has been trained: how do you make its delivery reproducible and prevent low-quality models from reaching production? The pipeline uses feature engineering, preprocessing, Optuna hyperparameter tuning, and XGBoost training, with every experiment tracked in MLflow. Models are registered in the MLflow Registry only when they meet explicit R² and RMSE thresholds.
-
-```
-FastAPI → Model endpoints → Evidently → Report → Docker → GitHub Actions Build
-```
-
-**Design decisions:** MLflow over ad hoc model files for experiment lineage and controlled model promotion. Explicit R²/RMSE thresholds over manual approval to enforce quality in the training pipeline. Evidently over custom statistical code to provide both machine-readable drift summaries and human-readable reports. Kubernetes over a single container for replicated serving, health checks, and resource control.
-
-`Python` `FastAPI` `XGBoost` `scikit-learn` `Optuna` `MLflow` `PostgreSQL` `Evidently` `DVC` `Kubernetes` `Docker` `GitHub Actions`
-
----
 
 ### 🔍 [Agentic RAG Platform](https://github.com/WilliamDumaszak/agentic-rag-platform)
 
